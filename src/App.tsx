@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { ConfigProvider } from 'antd'
+import { changeAntdTheme } from 'dynamic-antd-theme'
 
-function App() {
+import 'antd/dist/antd.css'
+
+import 'liff'
+
+import PageRouter from 'pages/PageRouter'
+
+changeAntdTheme('#00b900')
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ConfigProvider componentSize="large">
+      <PageRouter />
+    </ConfigProvider>
+  )
 }
 
-export default App;
+export default App
